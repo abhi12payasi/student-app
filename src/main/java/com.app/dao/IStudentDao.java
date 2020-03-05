@@ -4,7 +4,7 @@ import com.app.model.Student;
 
 import java.util.List;
 
-public interface IStudentDAO {
+public interface IStudentDao {
     int saveStudent(Student student);
     List<Student> getAllStudents();
 }

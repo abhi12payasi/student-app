@@ -1,12 +1,12 @@
 package com.app.dao.impl;
 
-import com.app.dao.IStudentDAO;
+import com.app.dao.IStudentDao;
 import com.app.model.Student;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentDAOImpl implements IStudentDAO {
+public class StudentDaoImpl implements IStudentDao {
     private static List<Student> studentList;
     static {
         studentList = new ArrayList<>();
