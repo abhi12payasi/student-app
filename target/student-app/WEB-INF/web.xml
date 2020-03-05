@@ -1,0 +1,69 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+    <param-name>propertyFilePath</param-name>
+    <param-value>C:\Users\Abhishekpayasi\Desktop\advance-java\student-app\src\main\resources\app.properties</param-value>
+  </context-param>
+  <filter>
+    <filter-name>rollValidationFilter</filter-name>
+    <filter-class>com.app.filter.RollValidationFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>nameValidationFilter</filter-name>
+    <filter-class>com.app.filter.NameValidationFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>responseConverterFilter</filter-name>
+    <filter-class>com.app.filter.ResponseConverterFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>rollValidationFilter</filter-name>
+    <url-pattern>/registerStudent</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>nameValidationFilter</filter-name>
+    <url-pattern>/registerStudent</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>responseConverterFilter</filter-name>
+    <url-pattern>/studentData</url-pattern>
+  </filter-mapping>
+
+  <listener>
+    <listener-class>com.app.listener.AppContextListener</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>studentDataServlet</servlet-name>
+    <servlet-class>com.app.controller.StudentDataServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>studentRegistrationServlet</servlet-name>
+    <servlet-class>com.app.controller.StudentRegistrationServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>propertyAccessorServlet</servlet-name>
+    <servlet-class>com.app.controller.PropertyAccessorServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>studentDataServlet</servlet-name>
+    <url-pattern>/studentData/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>studentRegistrationServlet</servlet-name>
+    <url-pattern>/registerStudent</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>propertyAccessorServlet</servlet-name>
+    <url-pattern>/readFile</url-pattern>
+  </servlet-mapping>
+
+</web-app>
+
+
